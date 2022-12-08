@@ -20,11 +20,7 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
-app.use(
-  cors({
-    origin: "https://social-app-c1wq.onrender.com",
-  })
-);
+app.use(cors());
 app.use(cookieParser());
 
 const storage = multer.diskStorage({
