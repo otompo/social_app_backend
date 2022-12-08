@@ -19,9 +19,12 @@ app.use((req, res, next) => {
   next();
 });
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://social-client-925s.onrender.com",
+  })
+);
 app.use(cookieParser());
-app.options("*", cors());
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -46,9 +49,9 @@ app.use("/api/likes", likesRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/relationships", relationshipsRoutes);
 
-app.use("/", (req, res) => {
-  res.send("SOCIAL API");
-});
+// app.use("/", (req, res) => {
+//   res.send("SOCIAL API");
+// });
 
 app.listen(10089, () => {
   console.log("API working");
