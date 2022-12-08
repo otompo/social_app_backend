@@ -49,6 +49,10 @@ app.use("/api/likes", likesRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/relationships", relationshipsRoutes);
 
+app.use("/", (req, res) => {
+  res.send("SOCIAL API");
+});
+
 app.listen(8800, () => {
   console.log("API working");
 });
