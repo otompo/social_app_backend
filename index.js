@@ -53,6 +53,6 @@ app.use("/api/relationships", relationshipsRoutes);
 //   res.send("SOCIAL API");
 // });
 
-app.listen(10089, () => {
+app.listen(8800, () => {
   console.log("API working");
 });
